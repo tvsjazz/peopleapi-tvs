@@ -57,4 +57,8 @@ public class PersonService {
         return personRepository.findById(id)
                 .orElseThrow(() -> new PersonNotFoundException(id));
     }
+
+    public void update(Long id) throws PersonNotFoundException {
+        verifyIfExists(id);
+    }
 }
